@@ -1,24 +1,53 @@
-import logo from './logo.svg';
+import {Suspense, lazy, useState, useEffect} from "react"
+
 import './App.css';
 
+import LoadingPage from "./components/LoadingPage"
+import {Switch, Route} from "react-router-dom"
+
+
+
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const AdminLogin = lazy(() => import('./pages/Registration/AdminRegistration'))
+const StudentLogin = lazy(() => import('./pages/Registration/StudentRegistration'))
+
 function App() {
+  const [user, setUser] = useState()
+
+
+  if (!user) {
+      return (
+        <Suspense fallback={<LoadingPage />}>
+            <Switch>
+              <Route 
+                  path="/"
+                  exact
+                  component={LoginPage}
+                  // render={(props) => (
+                  //   <LayoutBlack {...props}>
+                  //     <HomePage />
+                  //   </LayoutBlack>
+                  // )}
+              />
+              <Route 
+                  path="/admin/login"
+                  exact
+                  component={AdminLogin}
+              />
+              <Route 
+                  path="/student/login"
+                  exact
+                  component={StudentLogin}
+              />
+            </Switch>
+        </Suspense>
+    );
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<LoadingPage />}>
+      <LoginPage />
+    </Suspense>
   );
 }
 
