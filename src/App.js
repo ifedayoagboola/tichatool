@@ -5,6 +5,9 @@ import './App.css';
 import LoadingPage from "./components/LoadingPage"
 import { Switch, Route } from "react-router-dom"
 import LayOut from "./components/LayOut"
+import Teachers from "./components/Teachers";
+import Posts from "./components/Posts";
+import Students from "./components/Students";
 
 
 const LoginPage = lazy(() => import("./pages/LoginPage"));
@@ -39,9 +42,24 @@ function App() {
             exact
             component={StudentLogin}
           />
-          <Route exact path="/admin" render={(props) => (
+          <Route exact path="/teachers" render={(props) => (
             <LayOut {...props}>
-             
+                <Teachers />
+            </LayOut>
+          )} />
+          <Route exact path="/posts" render={(props) => (
+            <LayOut {...props}>
+                <Posts/>
+            </LayOut>
+          )} />
+          <Route exact path="/students" render={(props) => (
+            <LayOut {...props}>
+                <Students />
+            </LayOut>
+          )} />
+           <Route exact path="/more" render={(props) => (
+            <LayOut {...props}>
+               
             </LayOut>
           )} />
         </Switch>

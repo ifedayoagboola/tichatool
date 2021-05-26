@@ -1,0 +1,16 @@
+
+.search-input {
+    padding: 12px
+}
+
+.pending-table {
+    margin-top: 2%;
+}
+
+.pending-btn {
+    padding: 10px;
+    background-color: #88304e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

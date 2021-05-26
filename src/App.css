@@ -6,6 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+.MuiAppBar-colorPrimary {
+  background-color: #88304e !important;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

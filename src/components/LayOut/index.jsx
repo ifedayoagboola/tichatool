@@ -29,9 +29,7 @@ function LayOut({children}) {
                 <Sidebar />
 
                 <div className="layout-content">
-                    {/* {children} */}
-                    <p>component</p>
-                    
+                    {children} 
                 </div>
         </div>
     )
