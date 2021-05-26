@@ -1,10 +1,10 @@
-import {Suspense, lazy, useState, useEffect} from "react"
+import { Suspense, lazy, useState, useEffect } from "react"
 
 import './App.css';
 
 import LoadingPage from "./components/LoadingPage"
-import {Switch, Route} from "react-router-dom"
-
+import { Switch, Route } from "react-router-dom"
+import LayOut from "./components/LayOut"
 
 
 const LoginPage = lazy(() => import("./pages/LoginPage"));
@@ -16,34 +16,39 @@ function App() {
 
 
   if (!user) {
-      return (
-        <Suspense fallback={<LoadingPage />}>
-            <Switch>
-              <Route 
-                  path="/"
-                  exact
-                  component={LoginPage}
-                  // render={(props) => (
-                  //   <LayoutBlack {...props}>
-                  //     <HomePage />
-                  //   </LayoutBlack>
-                  // )}
-              />
-              <Route 
-                  path="/admin/login"
-                  exact
-                  component={AdminLogin}
-              />
-              <Route 
-                  path="/student/login"
-                  exact
-                  component={StudentLogin}
-              />
-            </Switch>
-        </Suspense>
+    return (
+      <Suspense fallback={<LoadingPage />}>
+        <Switch>
+          <Route
+            path="/"
+            exact
+            component={LoginPage}
+          // render={(props) => (
+          //   <LayoutBlack {...props}>
+          //     <HomePage />
+          //   </LayoutBlack>
+          // )}
+          />
+          <Route
+            path="/admin/login"
+            exact
+            component={AdminLogin}
+          />
+          <Route
+            path="/student/login"
+            exact
+            component={StudentLogin}
+          />
+          <Route exact path="/admin" render={(props) => (
+            <LayOut {...props}>
+             
+            </LayOut>
+          )} />
+        </Switch>
+      </Suspense>
     );
   }
-  
+
   return (
     <Suspense fallback={<LoadingPage />}>
       <LoginPage />
