@@ -8,7 +8,7 @@ import LayOut from "./components/LayOut"
 import Teachers from "./components/Teachers";
 import Posts from "./components/Posts";
 import Students from "./components/Students";
-
+import Overview from "./components/Overview"
 
 const LoginPage = lazy(() => import("./pages/LoginPage"));
 const AdminLogin = lazy(() => import('./pages/Registration/AdminRegistration'))
@@ -42,22 +42,27 @@ function App() {
             exact
             component={StudentLogin}
           />
-          <Route exact path="/teachers" render={(props) => (
+          <Route exact path="/admin/overview" render={(props) => (
+            <LayOut {...props}>
+                <Overview />
+            </LayOut>
+          )} />
+          <Route exact path="/admin/teachers" render={(props) => (
             <LayOut {...props}>
                 <Teachers />
             </LayOut>
           )} />
-          <Route exact path="/posts" render={(props) => (
+          <Route exact path="/admin/posts" render={(props) => (
             <LayOut {...props}>
                 <Posts/>
             </LayOut>
           )} />
-          <Route exact path="/students" render={(props) => (
+          <Route exact path="/admin/students" render={(props) => (
             <LayOut {...props}>
                 <Students />
             </LayOut>
           )} />
-           <Route exact path="/more" render={(props) => (
+           <Route exact path="/admin/more" render={(props) => (
             <LayOut {...props}>
                
             </LayOut>
