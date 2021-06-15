@@ -1,89 +1,53 @@
 
+.landing-div {
+    padding-top: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.landing-div h1 {
+    font-size: 60px;
+    color: white;
+}
+.landing-div p {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+.landing-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
 
-        .marquee {
-            overflow: hidden;
-            padding: 10px;
-            background: #88304e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            border: 1px solid #4a4a4a;
-
-        }
-        
-        .marquee p {
-            width: 100%;
-            margin: 0;
-            font-weight: bold;
-            font-size: 30px;
-            line-height: 50px;
-            text-align: center;
-            -moz-transform: translateX(100%);
-            -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-            -moz-animation: scroll-left .2s linear infinite;
-            -webkit-animation: scroll-left 2.2s linear infinite;
-            animation: scroll-left 10s linear infinite;
-        }
-        
-        @-moz-keyframes scroll-left {
-            0% {
-                -moz-transform: translateX(100%);
-            }
-            100% {
-                -moz-transform: translateX(-100%);
-            }
-        }
-        
-        @-webkit-keyframes scroll-left {
-            0% {
-                -webkit-transform: translateX(100%);
-            }
-            100% {
-                -webkit-transform: translateX(-100%);
-            }
-        }
-        
-        @keyframes scroll-left {
-            0% {
-                -moz-transform: translateX(100%);
-                -webkit-transform: translateX(100%);
-                transform: translateX(100%);
-            }
-            100% {
-                -moz-transform: translateX(-100%);
-                -webkit-transform: translateX(-100%);
-                transform: translateX(-100%);
-            }
-        }
-        
-        .login-page {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 500px;
-        }
-        .admin-login {
-            width: 300px;
-            padding: 20px;
-            margin-top: 3%;
-            background: #88304e;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-        .student-login {
-            width: 300px;
-            padding: 20px;
-            margin-top: 3%;
-            background: #88304e;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
+}
+.admin-login {
+    width: 280px;
+    padding: 30px;
+    margin-top: 5%;
+    background: #88304e;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.student-login {
+    width: 280px;
+    padding: 30px;
+    margin-top: 5%;
+    background: white;
+    border: none;
+    color: #88304e;
+    cursor: pointer;
+}
+.landing-container {
+    background-image: url('https://res.cloudinary.com/doouwbecx/image/upload/v1608809143/Schoolng/Group_197_xkrbzq.png');
+    width: 100%;
+    background-size: cover;
+    height: 110vh;
+    margin-top: -5%;
+}
 
 
 
@@ -96,9 +60,7 @@
 
 
 @media  screen and (min-width: 320px) and (max-width: 480px) {
-    .marquee p {
-        font-size: 18px;
-    }      
+    
 }
 
         
@@ -108,6 +70,6 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     
-}
+} 
 
 

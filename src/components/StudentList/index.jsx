@@ -30,17 +30,17 @@ const StyledTableRow = withStyles((theme) => ({
     },
 }))(TableRow);
 
-function createData(clas, student, name) {
-    return { clas, student, name };
+function createData(firstName, lastName, age) {
+    return { firstName, lastName, age };
 }
 
 const rows = [
-    createData('JS 1', 159, "Ola"),
-    createData('JS 2', 237,"Wale"),
-    createData('JS 3', 262, "Tobi"),
-    createData('SS 1', 305, "Femi"),
-    createData('SS 2', 356, "Linda"),
-    createData('SS 3', 356, "Faith"),
+    createData("Ola", "Kunle", 10),
+    createData("Wale", "Funsho", 14),
+    createData( "Tobi", "James", 12),
+    createData("Femi", "Adebayo", 15),
+    createData("Linda", "Ikeji", 12),
+    createData("Faith", "Ogedengbe", 10),
 ];
 
 const useStyles = makeStyles({
@@ -50,15 +50,15 @@ const useStyles = makeStyles({
 });
 
 
-function Students() {
-    
+
+function StudentList() {
+
     const classes = useStyles();
 
 
     return (
         <div>
-            <h1>Classes</h1>
-
+            <h3>Students</h3>
             <div className="pending-table">
                 <TableContainer component={Paper}>
                     <Table className={classes.table} aria-label="customized table">
@@ -72,14 +72,14 @@ function Students() {
                         </TableHead>
                         <TableBody>
                             {rows.map((row) => (
-                                <StyledTableRow key={row.clas}>
+                                <StyledTableRow key={row.name}>
                                     <StyledTableCell component="th" scope="row">
-                                        {row.clas}
+                                        {row.firstName}
                                     </StyledTableCell>
-                                    <StyledTableCell align="right">{row.student}</StyledTableCell>
-                                    <StyledTableCell align="right">{row.name}</StyledTableCell>
+                                    <StyledTableCell align="right">{row.lastName}</StyledTableCell>
+                                    <StyledTableCell align="right">{row.age}</StyledTableCell>
                                     <StyledTableCell align="right">
-                                        <button className="pending-btn" onClick={() => window.location.href = `/admin/class/${row.name}`}>View Class</button>
+                                        <button className="pending-btn" onClick={() => window.location.href = `/admin/student/${row.firstName}`}>View Student</button>
                                     </StyledTableCell>
                                 </StyledTableRow>
                             ))}
@@ -91,4 +91,4 @@ function Students() {
     )
 }
 
-export default Students
+export default StudentList

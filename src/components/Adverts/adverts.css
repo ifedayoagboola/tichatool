@@ -1,0 +1,12 @@
+
+.adverts {
+    background-color: white;
+    box-shadow: 2px 1px 10px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 1px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 1px 10px 0px rgba(0,0,0,0.75);
+    height: 200px;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

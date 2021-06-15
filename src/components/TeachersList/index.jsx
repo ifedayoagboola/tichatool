@@ -86,7 +86,7 @@ function TeacherList() {
                                     </StyledTableCell>
                                     <StyledTableCell align="right">{row.calories}</StyledTableCell>
                                     <StyledTableCell align="right">
-                                        <button className="pending-btn">View Profile</button>
+                                        <button className="pending-btn" onClick={() => window.location.href = `/admin/teachers/${row.name}`}>View Profile</button>
                                     </StyledTableCell>
                                 </StyledTableRow>
                             ))}

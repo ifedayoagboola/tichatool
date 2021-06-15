@@ -9,6 +9,11 @@ import Teachers from "./components/Teachers";
 import Posts from "./components/Posts";
 import Students from "./components/Students";
 import Overview from "./components/Overview"
+import StudentList from "./components/StudentList"
+import TeacherProfile from "./components/TeacherProfile";
+import Profile from "./components/Profile";
+import StudentProfile from "./components/StudentProfile"
+
 
 const LoginPage = lazy(() => import("./pages/LoginPage"));
 const AdminLogin = lazy(() => import('./pages/Registration/AdminRegistration'))
@@ -26,11 +31,6 @@ function App() {
             path="/"
             exact
             component={LoginPage}
-          // render={(props) => (
-          //   <LayoutBlack {...props}>
-          //     <HomePage />
-          //   </LayoutBlack>
-          // )}
           />
           <Route
             path="/admin/login"
@@ -52,6 +52,11 @@ function App() {
                 <Teachers />
             </LayOut>
           )} />
+           <Route exact path="/admin/teachers/:teacherId" render={(props) => (
+            <LayOut>
+                 <TeacherProfile {...props}/>
+            </LayOut>
+          )} />
           <Route exact path="/admin/posts" render={(props) => (
             <LayOut {...props}>
                 <Posts/>
@@ -62,11 +67,23 @@ function App() {
                 <Students />
             </LayOut>
           )} />
-           <Route exact path="/admin/more" render={(props) => (
+           <Route exact path="/admin/profile" render={(props) => (
             <LayOut {...props}>
-               
+               <Profile />
             </LayOut>
           )} />
+          <Route exact path="/admin/class/:studentList" render={(props) => (
+            <LayOut>
+                <StudentList {...props} />
+            </LayOut>
+          )} />
+
+          <Route exact path="/admin/student/:studentId" render={(props) => (
+            <LayOut>
+                <StudentProfile {...props} />
+            </LayOut>
+          )} />
+
         </Switch>
       </Suspense>
     );
