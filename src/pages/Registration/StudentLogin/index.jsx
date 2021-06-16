@@ -3,6 +3,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Link from "@material-ui/core/Link";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-  adminContainer: {
+  studentContainer: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -25,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
       height: "600px",
     },
   },
-  adminInput: {
+  studentInput: {
     padding: "10px",
     width: "500px",
     [theme.breakpoints.down("sm")]: {
@@ -33,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
       padding: "5px",
     },
   },
-  adminButton: {
+  studentButton: {
     padding: "10px",
     width: "500px",
     marginLeft: "6%",
@@ -42,20 +44,20 @@ const useStyles = makeStyles((theme) => ({
       padding: "5px",
     },
   },
-  adminImage: {
+  studentImage: {
     width: "100px",
     height: "100px",
   },
 }));
 
-function AdminLogin() {
+function StudentLogin() {
   const classes = useStyles();
 
   return (
-    <div className={classes.adminContainer}>
+    <div className={classes.studentContainer}>
       <img
-        src="https://res.cloudinary.com/doouwbecx/image/upload/v1621703685/admin-sign-laptop-icon-stock-vector-166205404_jxpnxr.jpg"
-        className={classes.adminImage}
+        src="https://res.cloudinary.com/doouwbecx/image/upload/v1621703684/graduate-student-hand-drawn-sketch-icon-graduate-student-hand-drawn-outline-doodle-icon-student-drawing_csp56840697_llrnam.jpg"
+        className={classes.studentImage}
       />
       <form className={classes.root} noValidate autoComplete="off">
         <div>
@@ -63,7 +65,7 @@ function AdminLogin() {
             id="outlined-basic"
             label="Enter Email "
             variant="outlined"
-            className={classes.adminInput}
+            className={classes.studentInput}
           />
         </div>
 
@@ -72,20 +74,28 @@ function AdminLogin() {
             id="outlined-basic"
             label="Enter Password"
             variant="outlined"
-            className={classes.adminInput}
+            className={classes.studentInput}
           />
         </div>
 
         <Button
           variant="contained"
           color="primary"
-          className={classes.adminButton}
+          className={classes.studentButton}
         >
           Primary
         </Button>
+
+        <Grid container justify="flex-end">
+          <Grid item>
+            <Link href="/student/register" variant="body2">
+              Don't have an account? Sign up
+            </Link>
+          </Grid>
+        </Grid>
       </form>
     </div>
   );
 }
 
-export default AdminLogin;
+export default StudentLogin;
